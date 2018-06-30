@@ -42,7 +42,7 @@ A theme must have all of the following:
 #### 2. Register the theme
 
 Edit `src/themes.js`, and add your theme along with a friendly name, description, and screenshot to allow it to be used. 
-
+The name of the property will also the the theme's route. 
 ```
 export default {
   ..., // other themes here
@@ -51,5 +51,6 @@ export default {
     imageUrl: '/static/sample_screenshot.png',
     name: 'Sample Theme',
     description: 'This is a sample, to show how to add additional themes. '
-  },
+  }
+}
 ```
