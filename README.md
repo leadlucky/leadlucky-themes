@@ -10,9 +10,10 @@ The following is a template for creating a theme.
 A theme must have all of the following: 
 
 - themeMixin
-- dataContract
+- dataContract (supports `String` and `Boolean` types currently)
 - input that binds `theEmail` as it's v-model
 - button that calls `saveEmail(theEmail)` when it's clicked
+- you can access configurable properties from your data contract in your Vue code via `customData` (part of the Vue component's data)
 
 ```vue
 <template>
