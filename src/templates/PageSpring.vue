@@ -48,17 +48,9 @@
   import themeMixin from "../mixins/themeMixin";
   export default {
     mixins: [validations, themeMixin],
-    props: ['propData'],
     data() {
       return {
         dialog2: false,
-      }
-    },
-    created() {
-      if (this.$route.params.id) {
-        this.fetchData();
-      } else {
-        this.loadDefaults()
       }
     },
     dataContract: {
@@ -89,7 +81,7 @@
       }
     }
   }
-</script>np
+</script>
 
 <style scoped>
 

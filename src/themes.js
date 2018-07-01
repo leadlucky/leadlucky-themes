@@ -1,4 +1,5 @@
 import SpringTheme from './templates/PageSpring'
+import FallTheme from './templates/Fall'
 import BeachTheme from './templates/PageBeach'
 import ParaTheme from './templates/PagePara'
 import DrawingTheme from './templates/PageDrawing'
@@ -10,6 +11,11 @@ export default {
     imageUrl: '/static/springtheme4.png',
     name: 'Spring',
     description: 'Get leads with this relaxing universal theme.'
+  },
+  'fall': {
+    component: FallTheme,
+    name: 'Fall',
+    description: 'A seasonal theme to attract the right leads.'
   },
   'beach': {
     component: BeachTheme,
