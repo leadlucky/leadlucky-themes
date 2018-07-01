@@ -1,9 +1,9 @@
 import themes from './themes';
-import validationMixin from './mixins/validationMixin';
-import themeMixin from './mixins/themeMixin';
+import vm from './mixins/validationMixin';
+import tm from './mixins/themeMixin';
 
-export let themeMixin = themeMixin
-export let validationMixin = validationMixin
+export let themeMixin = tm
+export let validationMixin = vm
 
 export default themes
 
