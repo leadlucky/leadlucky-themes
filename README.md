@@ -10,9 +10,10 @@ The following is a template for creating a theme.
 A theme must have all of the following: 
 
 - themeMixin
-- dataContract
+- dataContract (supports `String` and `Boolean` types currently)
 - input that binds `theEmail` as it's v-model
 - button that calls `saveEmail(theEmail)` when it's clicked
+- you can access configurable properties from your data contract in your Vue code via `customData` (part of the Vue component's data)
 
 ```vue
 <template>
@@ -42,7 +43,7 @@ A theme must have all of the following:
 #### 2. Register the theme
 
 Edit `src/themes.js`, and add your theme along with a friendly name, description, and screenshot to allow it to be used. 
-
+The name of the property will also the the theme's route. 
 ```
 export default {
   ..., // other themes here
@@ -51,5 +52,6 @@ export default {
     imageUrl: '/static/sample_screenshot.png',
     name: 'Sample Theme',
     description: 'This is a sample, to show how to add additional themes. '
-  },
+  }
+}
 ```
