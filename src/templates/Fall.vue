@@ -90,7 +90,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 #backdrop {
-    position: fixed;
     background-image: url('https://images.unsplash.com/photo-1503145516623-2021465881b6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bce83bde0bf8069e00fb93298d0fdea3&auto=format&fit=crop&w=1950&q=80');
     filter: contrast(40%) 
             brightness(60%);
@@ -112,6 +111,7 @@ export default {
     height: 200px;
     color: white;
     text-align: center;
+    font-family: 'Times New Roman', Times, serif;
     
     h1 {
         font-size: 50px;

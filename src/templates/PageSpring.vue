@@ -1,5 +1,5 @@
 <template>
-  <v-app class="background">
+  <div class="background">
     <div class="spring-theme-content">
       <v-container fluid fill-height justify-center>
         <v-layout align-center>
@@ -40,7 +40,7 @@
         </v-layout>
       </v-container>
     </div>
-  </v-app>
+  </div>
 </template>
 
 <script>

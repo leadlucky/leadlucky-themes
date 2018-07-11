@@ -17,7 +17,6 @@ export default {
   },
   data: () => ({
     customData: {},
-    valid: false,
     errorText: '',
     theEmail: ''
   }),
@@ -28,11 +27,19 @@ export default {
   },
   methods: {
     fetchData() {
-      if(this.$route.params.id) {
-        axios.get(window.leadlucky.apiUrl + 'public/pageData/' + this.$route.params.id)
+      const pageId =  this.$route.params.id;
+      if(pageId) {
+        axios.get(window.leadlucky.apiUrl + 'public/pageData/' + pageId)
           .then((resp) => {
             const myObjStr = JSON.stringify(resp.data);
             this.customData = JSON.parse(myObjStr)
+
+            // Only count it as a real view if we successfully load the custom data
+            window.ga('send', {
+              'hitType': 'pageview',
+              'page': pageId
+            });
+
           })
           .catch((err) => {
             console.log(err)
@@ -43,18 +50,18 @@ export default {
     },
     saveEmail(theEmail){
       const self = this;
-      if(this.$route.params.id != null) {
-        if(this.valid){
-          let data = { email: theEmail }
-          axios.post(window.leadlucky.apiUrl +'public/' + this.$route.params.id + '/email', data)
+      const pageId =  this.$route.params.id;
+      if(pageId) {
+          let data = {
+            email: theEmail,
+            gaClientId: window.ga.getAll()[0].get('clientId')
+          }
+          axios.post(`${window.leadlucky.apiUrl}public/${pageId}/email`, data)
             .then(function(response){
               window.location.href = self.customData.redirectUrl
             }).catch((err) => {
             console.log('Loading page data failed or invalid redirect.')
           });
-        }else{
-          this.errorText = 'Invalid Email.'
-        }
       }else{
         this.errorText = 'You are in preview mode.'
       }
