@@ -10,6 +10,7 @@
         </div>
         <p style="color: red">{{errorText}}</p>
         <div id="social-media">
+
              <a :href="`https://facebook.com/${customData.facebookUrl}`" v-if="customData.facebookEnabled"><div id="facebook" class="soc-link"></div></a>
              <a :href="`https://twitter.com/${customData.twitterUrl}`" v-if="customData.twitterEnabled"><div id="twitter" class="soc-link"></div></a>
              <a :href="`https://instagram.com/${customData.instagramUrl}`" v-if="customData.instagramEnabled"><div id="instagram" class="soc-link"></div></a>
@@ -91,7 +92,7 @@ export default {
 <style lang="scss" scoped>
 #backdrop {
     background-image: url('https://images.unsplash.com/photo-1503145516623-2021465881b6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bce83bde0bf8069e00fb93298d0fdea3&auto=format&fit=crop&w=1950&q=80');
-    filter: contrast(40%) 
+    filter: contrast(40%)
             brightness(60%);
     height: 100vh;
     width: 100vw;
@@ -112,17 +113,17 @@ export default {
     color: white;
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
-    
+
     h1 {
         font-size: 50px;
         margin: 0px 0px 20px 0px;
     }
-    
+
     p {
         font-size: 15px;
         margin: 10px 0px 30px 0px;
     }
-    
+
     #submitButton {
         background-color: #795548;
         height: 40px;
@@ -131,16 +132,16 @@ export default {
         transition: 800ms;
         padding: 0px 20px 0px 20px;
     }
-    
+
     .disabled {
         filter: contrast(0.3);
         background-color: #795548;
-        
+
         &:hover {
             cursor: not-allowed !important;
         }
     }
-    
+
     .enabled {
         &:hover {
             //opacity: 0.6;
@@ -148,7 +149,7 @@ export default {
             background-color: #3E2723 !important
         }
     }
-    
+
     #emailInput {
         //margin-top: 20px;
         padding: 10px 15px 10px 15px;
@@ -160,17 +161,17 @@ export default {
         width: 250px;
         height: 40px;
     }
-    
+
     #input-stuff {
         display: inline-flex;
         //background-color: black;
     }
-    
+
     #social-media {
         //background-color: black;
         height: 30px;
         margin: 30px auto 0px auto;
-        
+
         .soc-link {
             filter: invert(1);
             background-position: center;
@@ -180,29 +181,27 @@ export default {
             width: 28px;
             height: 28px;
             margin: 0px auto 0px auto;
-            
+
             &:hover {
                 cursor: pointer;
             }
         }
-        
+
         #facebook {
             margin: 0px 10px 0px 10px;
             background-image: url("https://image.flaticon.com/icons/svg/37/37564.svg");
         }
-        
+
         #twitter {
             margin: 0px 10px 0px 10px;
             background-image: url("https://png.icons8.com/metro/1600/twitter.png");
         }
-        
+
          #instagram {
             margin: 0px 10px 0px 10px;
-            background-image: url("https://skibootfix.com/wp-content/uploads/2017/11/instalogo-1.png");
+            background-image: url("https://png.icons8.com/ios/1600/instagram-filled.png");
         }
     }
 }
 
 </style>
-
-
