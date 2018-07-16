@@ -24,7 +24,7 @@ import themeMixin from '../mixins/themeMixin'
 import validationMixin from '../mixins/validationMixin'
 
 export default {
-    name: "winter-theme",
+    name: "summer-theme",
     mixins: [validationMixin, themeMixin],
     computed: {
         validEmail() {
@@ -38,7 +38,7 @@ export default {
         title: {
             type: String,
             name: "Title",
-            default: "Wintery Title"
+            default: "Summery Title"
         },
         description: {
             type: String,
@@ -91,9 +91,10 @@ export default {
 </script>
 <style lang="scss" scoped>
 #backdrop {
-    background-image: url('http://studentweb.cdm.depaul.edu/~tbrew/personal-projects/leadlucky-res/adam-chang-231299-unsplash.jpg');
+    background-image: url('http://studentweb.cdm.depaul.edu/~tbrew/personal-projects/leadlucky-res/summer.jpg');
     filter: contrast(40%)
             brightness(60%);
+     background-size: cover;
     height: 100vh;
     width: 100vw;
     z-index: -1;
@@ -112,7 +113,7 @@ export default {
     height: 200px;
     color: white;
     text-align: center;
-    font-family: Georgia,'Times New Roman', Times, serif;
+    font-family: Roboto,'Times New Roman', Times, serif;
 
     h1 {
         font-size: 50px;
@@ -125,10 +126,10 @@ export default {
     }
 
     #submitButton {
-        background-color: #90A4AE;
+        background-color: #2196F3;
         height: 40px;
         line-height: 40px;
-        border-radius: 0px 10px 10px 0px;
+        border-radius: 0px 40px 40px 0px;
         transition: 500ms;
         padding: 0px 30px 0px 25px;
     }
@@ -146,14 +147,14 @@ export default {
         &:hover {
             //opacity: 0.6;
             cursor: pointer;
-            background-color: #607D8B !important
+            background-color: #1565C0 !important
         }
     }
 
     #emailInput {
         //margin-top: 20px;
-        padding: 10px 15px 10px 15px;
-        border-radius: 10px 0px 0px 10px;
+        padding: 10px 15px 10px 25px;
+        border-radius: 40px 0px 0px 40px;
         border: none;
         opacity: 1;
         background-color: white;

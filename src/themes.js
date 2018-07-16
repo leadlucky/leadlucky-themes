@@ -5,13 +5,25 @@ import ParaTheme from './templates/PagePara'
 import DrawingTheme from './templates/PageDrawing'
 import ForestTheme from './templates/PageForest'
 import WinterTheme from './templates/Winter'
+import SummerTheme from './templates/Summer'
 
 export default {
+  'winter': {
+    component: WinterTheme,
+    imageUrl: '/static/forrest/forestbg.png',
+    name: 'Winter',
+    description: 'Winter theme'
+  },
   'spring': {
     component: SpringTheme,
     imageUrl: '/static/springtheme4.png',
     name: 'Spring',
     description: 'Get leads with this relaxing universal theme.'
+  },
+  'summer': {
+    component: SummerTheme,
+    name: 'Summer',
+    description: 'Summer theme'
   },
   'fall': {
     component: FallTheme,
@@ -41,11 +53,5 @@ export default {
     imageUrl: '/static/forrest/forestbg.png',
     name: 'Forest',
     description: 'Calming forest theme.'
-  },
-  'winter': {
-    component: WinterTheme,
-    imageUrl: '/static/forrest/forestbg.png',
-    name: 'Winter',
-    description: 'Snow n shit'
   }
 }

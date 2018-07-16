@@ -127,7 +127,7 @@ export default {
     }
 
     #submitButton {
-        background-color: #F06292;
+        background-color: #FF8F00;
         height: 40px;
         line-height: 40px;
         border-radius: 0px 40px 40px 0px;
@@ -148,7 +148,7 @@ export default {
         &:hover {
             //opacity: 0.6;
             cursor: pointer;
-            background-color: #E91E63 !important
+            background-color: #FF6F00 !important
         }
     }
 
