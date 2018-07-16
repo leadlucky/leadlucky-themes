@@ -128,7 +128,7 @@ export default {
         background-color: #90A4AE;
         height: 40px;
         line-height: 40px;
-        border-radius: 0px 40px 40px 0px;
+        border-radius: 0px 5px 5px 0px;
         transition: 500ms;
         padding: 0px 30px 0px 25px;
     }
@@ -153,7 +153,7 @@ export default {
     #emailInput {
         //margin-top: 20px;
         padding: 10px 15px 10px 25px;
-        border-radius: 40px 0px 0px 40px;
+        border-radius: 5px 0px 0px 5px;
         border: none;
         opacity: 1;
         background-color: white;

@@ -1,106 +1,211 @@
 <template>
-  <div class="background">
-    <div class="spring-theme-content">
-      <v-container fluid fill-height justify-center>
-        <v-layout align-center>
-          <v-flex xs6 offset-xs3 class="text-xs-center">
-            <h1 class="white--text scale-font">{{ customData.title }}</h1>
-            <h2 class="black--text" style="font-size: 2vw">{{ customData.description }}</h2>
+<div>
+    <div id="backdrop"></div>
+    <div id="content">
+        <h1>{{customData.title}}</h1>
+        <p>{{customData.description}}</p>
+        <div id="input-stuff">
+            <input type="text" placeholder="Email" id="emailInput" name="email" v-model="theEmail" />
+            <div @click="validEmail && saveEmail(theEmail)" id="submitButton" :class="buttonClass">{{customData.buttonText}}</div>
+        </div>
+        <p style="color: red">{{errorText}}</p>
+        <div id="social-media">
 
-            <v-divider class="my-3 white"></v-divider>
-            <v-btn large color="primary" @click.stop="dialog2 = true" class="mx-0">
-              {{customData.buttontext}}
-            </v-btn>
-
-            <v-dialog v-model="dialog2" max-width="500px">
-              <v-card>
-                <v-card-title>
-                  <v-flex xs12>
-                    <h3 class="display-2">{{customData.poptitle}}</h3>
-                  </v-flex>
-                </v-card-title>
-                <h4>{{customData.popsub}}</h4>
-                <v-form v-model="valid">
-                  <v-flex xs12>
-                    <v-text-field style="padding: 10px" :rules="emailRules" placeholder="example@mysite.com"
-                                  v-model="theEmail"></v-text-field>
-                    <p class="text-xs-left" v-text="errorText" style="color: red; padding-left: 10px"></p>
-                  </v-flex>
-
-                  <v-card-actions>
-                    <v-flex xs6 offset-xs6>
-                      <v-btn color="primary" flat @click.stop="dialog2=false">Close</v-btn>
-                      <v-btn color="primary" flat @click.stop="saveEmail(theEmail)">Submit</v-btn>
-                    </v-flex>
-                  </v-card-actions>
-                </v-form>
-              </v-card>
-            </v-dialog>
-          </v-flex>
-        </v-layout>
-      </v-container>
+             <a :href="`https://facebook.com/${customData.facebookUrl}`" v-if="customData.facebookEnabled"><div id="facebook" class="soc-link"></div></a>
+             <a :href="`https://twitter.com/${customData.twitterUrl}`" v-if="customData.twitterEnabled"><div id="twitter" class="soc-link"></div></a>
+             <a :href="`https://instagram.com/${customData.instagramUrl}`" v-if="customData.instagramEnabled"><div id="instagram" class="soc-link"></div></a>
+        </div>
     </div>
-  </div>
+</div>
 </template>
-
 <script>
-  import validations from '../mixins/validationMixin';
-  import themeMixin from "../mixins/themeMixin";
-  export default {
-    mixins: [validations, themeMixin],
-    data() {
-      return {
-        dialog2: false,
-      }
+
+import themeMixin from '../mixins/themeMixin'
+import validationMixin from '../mixins/validationMixin'
+
+export default {
+    name: "spring-theme",
+    mixins: [validationMixin, themeMixin],
+    computed: {
+        validEmail() {
+            return this.emailRules[0](this.theEmail) === true;
+        },
+        buttonClass() {
+            return this.validEmail ? "enabled" : "disabled";
+        }
     },
     dataContract: {
-      title: {
-        type: String,
-        name: 'Title',
-        default: "Spring is Here"
-      },
-      description: {
-        type: String,
-        name: 'Description',
-        default: "Sign Up"
-      },
-      buttontext: {
-        type: String,
-        name: 'Button Text',
-        default: "Sign Up"
-      },
-      poptitle: {
-        type: String,
-        name: 'Popup Title',
-        default: "Sign Up Now"
-      },
-      popsub: {
-        type: String,
-        name: 'Popup Subtitle',
-        default: "Get 10% off your next order!"
-      }
+        title: {
+            type: String,
+            name: "Title",
+            default: "Springy Title"
+        },
+        description: {
+            type: String,
+            name: "Description",
+            default: "This is my description"
+        },
+        buttonText: {
+            type: String,
+            name: "Button Text",
+            default: "Submit"
+        },
+        facebookEnabled: {
+            type: Boolean,
+            name: "Facebook Enabled",
+            default: true
+        },
+        facebookUrl: {
+            type: String,
+            name: "Facebook URL",
+            default: "#",
+            prefix: 'https://facebook.com/',
+            dependsOn: "facebookEnabled"
+        },
+        twitterEnabled: {
+            type: Boolean,
+            name: "Twitter Enabled",
+            default: true
+        },
+        twitterUrl: {
+            type: String,
+            name: "Twitter URL",
+            default: "#",
+            prefix: 'https://twitter.com/',
+            dependsOn: "twitterUrl"
+        },
+        instagramEnabled: {
+            type: Boolean,
+            name: "Instagram Enabled",
+            default: true
+        },
+        instagramUrl: {
+            type: String,
+            name: "Instagram URL",
+            default: "#",
+            prefix: 'https://instagram.com/',
+            dependsOn: "instagramEnabled"
+        }
     }
-  }
+}
 </script>
-
-<style scoped>
-
-  .spring-theme-content {
-    position: absolute;
-    width: 100%;
-    margin: auto;
-    top: 0;
-    bottom: 0;
-  }
-
-  .background {
-    background-image: url('/static/spring.jpg');
-    background-position: center;
-    background-attachment: fixed;
+<style lang="scss" scoped>
+#backdrop {
+    background-image: url('http://studentweb.cdm.depaul.edu/~tbrew/personal-projects/leadlucky-res/spring.jpg');
+    filter: contrast(40%)
+            brightness(60%);
     background-size: cover;
-  }
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+}
 
-  .scale-font {
-    font-size: 4vh
-  }
+#content {
+    position: absolute;
+    display: block;
+    //background-color: black;
+    margin: auto;
+    width: 620px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    height: 200px;
+    color: white;
+    text-align: center;
+    font-family: Georgia,'Times New Roman', Times, serif;
+    font-weight: lighter;
+
+    h1 {
+        font-size: 50px;
+        margin: 0px 0px 20px 0px;
+    }
+
+    p {
+        font-size: 15px;
+        margin: 10px 0px 30px 0px;
+    }
+
+    #submitButton {
+        background-color: #F06292;
+        height: 40px;
+        line-height: 40px;
+        border-radius: 0px 40px 40px 0px;
+        transition: 500ms;
+        padding: 0px 30px 0px 25px;
+    }
+
+    .disabled {
+        filter: contrast(0.3);
+        background-color: #F8BBD0;
+
+        &:hover {
+            cursor: not-allowed !important;
+        }
+    }
+
+    .enabled {
+        &:hover {
+            //opacity: 0.6;
+            cursor: pointer;
+            background-color: #E91E63 !important
+        }
+    }
+
+    #emailInput {
+        //margin-top: 20px;
+        padding: 10px 15px 10px 25px;
+        border-radius: 40px 0px 0px 40px;
+        border: none;
+        opacity: 1;
+        background-color: white;
+        color: #111;
+        width: 250px;
+        height: 40px;
+    }
+
+    #input-stuff {
+        display: inline-flex;
+        //background-color: black;
+    }
+
+    #social-media {
+        //background-color: black;
+        height: 30px;
+        margin: 30px auto 0px auto;
+
+        .soc-link {
+            filter: invert(1);
+            background-position: center;
+            background-size: cover;
+            display: inline-flex;
+            //background-color: red;
+            width: 28px;
+            height: 28px;
+            margin: 0px auto 0px auto;
+            transition: 200ms;
+
+            &:hover {
+                cursor: pointer;
+                opacity: 0.3;
+            }
+        }
+
+        #facebook {
+            margin: 0px 10px 0px 10px;
+            background-image: url("https://image.flaticon.com/icons/svg/37/37564.svg");
+        }
+
+        #twitter {
+            margin: 0px 10px 0px 10px;
+            background-image: url("https://png.icons8.com/metro/1600/twitter.png");
+        }
+
+         #instagram {
+            margin: 0px 10px 0px 10px;
+            background-image: url("https://png.icons8.com/ios/1600/instagram-filled.png");
+        }
+    }
+}
+
 </style>
