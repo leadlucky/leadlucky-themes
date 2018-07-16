@@ -4,6 +4,7 @@ import BeachTheme from './templates/PageBeach'
 import ParaTheme from './templates/PagePara'
 import DrawingTheme from './templates/PageDrawing'
 import ForestTheme from './templates/PageForest'
+import WinterTheme from './templates/Winter'
 
 export default {
   'spring': {
@@ -40,5 +41,11 @@ export default {
     imageUrl: '/static/forrest/forestbg.png',
     name: 'Forest',
     description: 'Calming forest theme.'
+  },
+  'winter': {
+    component: WinterTheme,
+    imageUrl: '/static/forrest/forestbg.png',
+    name: 'Winter',
+    description: 'Snow n shit'
   }
 }

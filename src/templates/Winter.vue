@@ -24,7 +24,7 @@ import themeMixin from '../mixins/themeMixin'
 import validationMixin from '../mixins/validationMixin'
 
 export default {
-    name: "fall-theme",
+    name: "winter-theme",
     mixins: [validationMixin, themeMixin],
     computed: {
         validEmail() {
@@ -38,7 +38,7 @@ export default {
         title: {
             type: String,
             name: "Title",
-            default: "Autumn Title"
+            default: "Wintery Title"
         },
         description: {
             type: String,
@@ -91,7 +91,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 #backdrop {
-    background-image: url('https://images.unsplash.com/photo-1503145516623-2021465881b6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bce83bde0bf8069e00fb93298d0fdea3&auto=format&fit=crop&w=1950&q=80');
+    background-image: url('http://studentweb.cdm.depaul.edu/~tbrew/personal-projects/leadlucky-res/adam-chang-231299-unsplash.jpg');
     filter: contrast(40%)
             brightness(60%);
     height: 100vh;
@@ -112,7 +112,7 @@ export default {
     height: 200px;
     color: white;
     text-align: center;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Georgia,'Times New Roman', Times, serif;
 
     h1 {
         font-size: 50px;
@@ -125,17 +125,17 @@ export default {
     }
 
     #submitButton {
-        background-color: #795548;
+        background-color: #90A4AE;
         height: 40px;
         line-height: 40px;
-        border-radius: 0px 10px 10px 0px;
-        transition: 800ms;
-        padding: 0px 20px 0px 20px;
+        border-radius: 0px 40px 40px 0px;
+        transition: 500ms;
+        padding: 0px 30px 0px 25px;
     }
 
     .disabled {
         filter: contrast(0.3);
-        background-color: #795548;
+        background-color: #B0BEC5;
 
         &:hover {
             cursor: not-allowed !important;
@@ -146,14 +146,14 @@ export default {
         &:hover {
             //opacity: 0.6;
             cursor: pointer;
-            background-color: #3E2723 !important
+            background-color: #607D8B !important
         }
     }
 
     #emailInput {
         //margin-top: 20px;
-        padding: 10px 15px 10px 15px;
-        border-radius: 10px 0px 0px 10px;
+        padding: 10px 15px 10px 25px;
+        border-radius: 40px 0px 0px 40px;
         border: none;
         opacity: 1;
         background-color: white;
@@ -181,7 +181,7 @@ export default {
             width: 28px;
             height: 28px;
             margin: 0px auto 0px auto;
-            transition: 300ms;
+            transition: 200ms;
 
             &:hover {
                 cursor: pointer;
