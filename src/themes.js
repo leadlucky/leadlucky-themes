@@ -6,6 +6,7 @@ import DrawingTheme from './templates/PageDrawing'
 import ForestTheme from './templates/PageForest'
 import WinterTheme from './templates/Winter'
 import SummerTheme from './templates/Summer'
+import FoodTheme from './templates/Food'
 
 export default {
   'winter': {
@@ -53,5 +54,11 @@ export default {
     imageUrl: '/static/forrest/forestbg.png',
     name: 'Forest',
     description: 'Calming forest theme.'
+  },
+  'food': {
+    component: FoodTheme,
+    imageUrl: '/static/forrest/forestbg.png',
+    name: 'Food',
+    description: 'A hella tasty theme'
   }
 }
