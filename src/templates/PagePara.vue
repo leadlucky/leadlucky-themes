@@ -3,7 +3,6 @@
       <v-toolbar class="white">
         <v-toolbar-title >{{customData.logo}}</v-toolbar-title>
       </v-toolbar>
-      <v-content>
         <section>
           <v-parallax src="/static/hero.jpeg" height="600">
             <v-layout
@@ -18,7 +17,7 @@
                 <v-form v-model="valid">
                 <v-text-field solo placeholder="example@mysite.com" class="theme--light" v-model="theEmail" :rules="emailRules"></v-text-field>
                   <p class="text-xs-left" v-text="errorText" style="color: red"></p>
-              
+
                 <v-btn
                   class="blue lighten-2 mt-5"
                   dark
@@ -101,7 +100,7 @@
             <v-layout column align-center justify-center>
               <div class="headline white--text mb-3 text-xs-center">{{customData.bottomHeadline}}</div>
               <em >{{customData.bottomSubheading}}</em>
-              
+
               <v-btn
                 class="blue lighten-2 mt-5"
                 dark
@@ -123,7 +122,6 @@
             </v-flex>
           </v-layout>
         </v-footer>
-      </v-content>
     </v-app>
 </template>
 

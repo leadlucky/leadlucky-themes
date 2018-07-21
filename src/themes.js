@@ -37,9 +37,9 @@ export default {
     name: 'Beach',
     description: 'Great theme for travel niche.'
   },
-  'paralax': {
+  'parallax': {
     component: ParaTheme,
-    imageUrl: '/static/paralaxbg4.png',
+    imageUrl: '/static/parallaxbg4.png',
     name: 'Parallax',
     description: 'Parallaxing and mobile optimized theme.'
   },
