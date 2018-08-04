@@ -74,6 +74,9 @@ export default {
       });
 
       this.customData = obj
+    },
+    scrollToElement(el){
+      document.getElementById(el).scrollIntoView({behavior: 'smooth'})
     }
   }
 }

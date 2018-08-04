@@ -16,7 +16,7 @@
           <section id="one" class="wrapper style1">
 
             <div class="image fit flush">
-              <img src="/static/forrest/pic02.jpg" alt="" />
+              <img src="/static/theme_assets/forest/pic02.jpg" alt="" />
             </div>
             <header class="special">
               <h2 >{{customData.subtitle}}</h2>
@@ -46,22 +46,22 @@
               <div class="gallery">
                 <div>
                   <div class="image fit flush">
-                    <a href="/static/forrest/pic03.jpg"><img src="/static/forrest/pic03.jpg" alt="" /></a>
+                    <a href="/static/theme_assets/forest/pic03.jpg"><img src="/static/theme_assets/forest/pic03.jpg" alt="" /></a>
                   </div>
                 </div>
                 <div>
                   <div class="image fit flush">
-                    <a href="/static/forrest/pic01.jpg"><img src="/static/forrest/pic01.jpg" alt="" /></a>
+                    <a href="/static/theme_assets/forest/pic01.jpg"><img src="/static/theme_assets/forest/pic01.jpg" alt="" /></a>
                   </div>
                 </div>
                 <div>
                   <div class="image fit flush">
-                    <a href="/static/forrest/pic04.jpg"><img src="/static/forrest/pic04.jpg" alt="" /></a>
+                    <a href="/static/theme_assets/forest/pic04.jpg"><img src="/static/theme_assets/forest/pic04.jpg" alt="" /></a>
                   </div>
                 </div>
                 <div>
                   <div class="image fit flush">
-                    <a href="/static/forrest/pic05.jpg"><img src="/static/forrest/pic05.jpg" alt="" /></a>
+                    <a href="/static/theme_assets/forest/pic05.jpg"><img src="/static/theme_assets/forest/pic05.jpg" alt="" /></a>
                   </div>
                 </div>
               </div>
@@ -71,21 +71,21 @@
           <!-- Three -->
           <section id="three" class="wrapper">
             <div class="spotlight">
-              <div class="image flush"><img src="/static/forrest/pic06.jpg" alt="" /></div>
+              <div class="image flush"><img src="/static/theme_assets/forest/pic06.jpg" alt="" /></div>
               <div class="inner">
                 <h3 >{{customData.photo1title}}</h3>
                 <p >{{customData.photo1text}}</p>
               </div>
             </div>
             <div class="spotlight alt">
-              <div class="image flush"><img src="/static/forrest/pic07.jpg" alt="" /></div>
+              <div class="image flush"><img src="/static/theme_assets/forest/pic07.jpg" alt="" /></div>
               <div  class="inner">
                 <h3 >{{customData.photo2title}}</h3>
                 <p >{{customData.photo2text}}</p>
               </div>
             </div>
             <div class="spotlight">
-              <div class="image flush"><img src="/static/forrest/pic08.jpg" alt="" /></div>
+              <div class="image flush"><img src="/static/theme_assets/forest/pic08.jpg" alt="" /></div>
               <div class="inner">
                 <h3 >{{customData.photo3title}}</h3>
                 <p >{{customData.photo3text}}</p>
@@ -1412,7 +1412,7 @@
   }
 
   .background {
-    background-image: url('/static/forrest/bg.jpg');
+    background-image: url('/static/theme_assets/forest/bg.jpg');
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;

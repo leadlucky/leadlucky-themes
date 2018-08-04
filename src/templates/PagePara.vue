@@ -4,7 +4,7 @@
         <v-toolbar-title >{{customData.logo}}</v-toolbar-title>
       </v-toolbar>
         <section>
-          <v-parallax src="/static/hero.jpeg" height="600">
+          <v-parallax src="/static/theme_assets/paralax/hero.jpeg" height="600">
             <v-layout
               column
               align-center
@@ -96,7 +96,7 @@
         </section>
 
         <section>
-          <v-parallax src="/static/section.jpg" height="380">
+          <v-parallax src="/static/theme_assets/paralax/section.jpg" height="380">
             <v-layout column align-center justify-center>
               <div class="headline white--text mb-3 text-xs-center">{{customData.bottomHeadline}}</div>
               <em >{{customData.bottomSubheading}}</em>
