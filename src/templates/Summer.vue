@@ -94,7 +94,7 @@ export default {
     background-image: url('http://studentweb.cdm.depaul.edu/~tbrew/personal-projects/leadlucky-res/summer.jpg');
     filter: contrast(40%)
             brightness(60%);
-     background-size: cover;
+    background-size: cover;
     height: 100vh;
     width: 100vw;
     z-index: -1;

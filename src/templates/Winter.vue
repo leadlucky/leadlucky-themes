@@ -92,6 +92,7 @@ export default {
 <style lang="scss" scoped>
 #backdrop {
     background-image: url('http://studentweb.cdm.depaul.edu/~tbrew/personal-projects/leadlucky-res/adam-chang-231299-unsplash.jpg');
+    background-size: cover;
     filter: contrast(40%)
             brightness(60%);
     height: 100vh;

@@ -92,6 +92,7 @@ export default {
 <style lang="scss" scoped>
 #backdrop {
     background-image: url('https://images.unsplash.com/photo-1503145516623-2021465881b6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bce83bde0bf8069e00fb93298d0fdea3&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
     filter: contrast(40%)
             brightness(60%);
     height: 100vh;

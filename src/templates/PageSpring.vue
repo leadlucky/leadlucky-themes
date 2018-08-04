@@ -92,9 +92,9 @@ export default {
 <style lang="scss" scoped>
 #backdrop {
     background-image: url('http://studentweb.cdm.depaul.edu/~tbrew/personal-projects/leadlucky-res/spring.jpg');
+    background-size: cover;
     filter: contrast(40%)
             brightness(60%);
-    background-size: cover;
     height: 100vh;
     width: 100vw;
     z-index: -1;
