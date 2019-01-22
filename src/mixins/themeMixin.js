@@ -1,9 +1,13 @@
 import themes from '../themes'
 import axios from 'axios'
 
+
+
+
 export default {
   created() {
     this.$route.params.id ? this.fetchData() : this.loadDefaults()
+
   },
   props: {
     propData: {
@@ -67,6 +71,19 @@ export default {
       }
     },
     loadDefaults(){
+      const onRecieve = ((e) => {
+        // Ensure we are on a trusted origin (TODO - don't hardcode)
+        if (!["http://localhost:8080", "https://leadlucky.com", "http://localhost:8080"].includes(e.origin)) {
+          return
+        }
+        if (e.data && e.data.customData){
+          this.customData = e.data.customData
+        }
+        //this.customData = e.data.customData
+      }).bind(this)
+      
+      window.addEventListener("message", onRecieve, false)
+
       const obj = {};
 
       Object.keys(themes[this.themeName].component.dataContract).forEach((fieldName) => {
