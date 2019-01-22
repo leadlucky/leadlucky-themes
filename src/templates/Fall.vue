@@ -28,7 +28,7 @@ export default {
     mixins: [validationMixin, themeMixin],
     computed: {
         validEmail() {
-            return this.emailRules[0](this.theEmail) === true;
+            return this.emailRules && this.emailRules[0](this.theEmail) === true;
         },
         buttonClass() {
             return this.validEmail ? "enabled" : "disabled";
