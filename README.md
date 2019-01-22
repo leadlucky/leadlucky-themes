@@ -1,5 +1,11 @@
 # Leadlucky - Themes
 
+### Running the project
+
+```
+npm install
+npm run dev
+```
 
 ### Adding a Theme
 
