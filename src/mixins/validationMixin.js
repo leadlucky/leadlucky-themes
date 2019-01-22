@@ -25,24 +25,25 @@ function buildRules(regExps = [], fns = [], errorMessages = ["Input is invalid"]
       });
     }
 
-    return errMessage || true;
+    return errMessage || false;
   }]
 }
 
 const mixin = {}
-  mixin.emailRules = buildRules(
+
+mixin.emailRules = buildRules(
     [/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/],
     [],
     ['Invalid email']
   );
 
-  mixin.userIdRules = buildRules(
+mixin.userIdRules = buildRules(
   [/^[A-Za-z0-9]*$/],
   [],
   ['Invalid username']
-  );
+);
 
-  mixin.passwordRules = buildRules(
+mixin.passwordRules = buildRules(
   [],
   [
     pwd => pwd.length >= 8,
